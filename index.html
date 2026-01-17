@@ -1,13 +1,66 @@
 <!DOCTYPE html>
 <div id="container"></div>
 <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
-<script type="module">
 
-<script>
+<!-- I was having issues with setup, so referred to the following resource: https://d3js.org/getting-started -->
+<script type="module">
   console.log(d3); // test if d3 is loaded
-  // Add an SVG
-  // Add Rectangles
-  // Add Circles
+  
+  // As a note, I'm attempting to recreate the Audi Quattro Sport from https://supercarnostalgia.com/blog/for-sale-1984-audi-quattro-sport-usa-1
+
+  // Again, referred to https://d3js.org/getting-started for creating and displaying the svg since it's been a while since I've used d3
+  const svg = d3.create("svg")
+    .attr("width", 800)
+    .attr("height", 600);
+
+  // For creating shapes, referred to https://d3-graph-gallery.com/graph/shape.html
+  // and https://www.youtube.com/watch?v=bp2GF8XcJdY
+  // I added the bumper and grill of the car (will add some more features)
+  svg.append("rect")
+    .attr("x", 250)
+    .attr("y", 150)
+    .attr("width", 300)
+    .attr("height", 125)
+    .attr("fill", "red");
+
+  svg.append("rect")
+    .attr("x", 260)
+    .attr("y", 160)
+    .attr("width", 280)
+    .attr("height", 50)
+    .attr("fill", "black");
+
+  // I added the Audi logo rings on top of the grill (still need to determine how to layer them properly)
+  svg.append("circle")
+    .attr("cx", 360)
+    .attr("cy", 185)
+    .attr("r", 20)
+    .attr("stroke", "grey");
+
+  svg.append("circle")
+    .attr("cx", 385)
+    .attr("cy", 185)
+    .attr("r", 20)
+    .attr("stroke", "grey");
+  
+  svg.append("circle")
+    .attr("cx", 410)
+    .attr("cy", 185)
+    .attr("r", 20)
+    .attr("stroke", "grey");
+
+  svg.append("circle")
+    .attr("cx", 435)
+    .attr("cy", 185)
+    .attr("r", 20)
+    .attr("stroke", "grey");
+    
   // Add Lines
+  // I plan on using lines to create the hood and/or windshield
+
   // Add Polygons
+  // I plan on using polygons for creating the tires of the car
+
+  container.append(svg.node());
+
 </script>
