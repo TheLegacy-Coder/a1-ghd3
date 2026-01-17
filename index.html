@@ -15,7 +15,7 @@
 
   // For creating shapes, referred to https://d3-graph-gallery.com/graph/shape.html
   // and https://www.youtube.com/watch?v=bp2GF8XcJdY
-  // I added the bumper and grill of the car (will add some more features)
+  // Added the bumper and grill of the car
   svg.append("rect")
     .attr("x", 250)
     .attr("y", 150)
@@ -30,6 +30,21 @@
     .attr("width", 280)
     .attr("height", 50)
     .attr("fill", "black");
+
+  // Added the headlights
+  svg.append("rect")
+    .attr("x", 265)
+    .attr("y", 165)
+    .attr("width", 50)
+    .attr("height", 40)
+    .attr("fill", "lightgrey")
+
+  svg.append("rect")
+    .attr("x", 485)
+    .attr("y", 165)
+    .attr("width", 50)
+    .attr("height", 40)
+    .attr("fill", "lightgrey")
 
   // Added intake vents to the bumper
   // Top half intake vents
@@ -89,7 +104,7 @@
     .attr("r", 8)
     .attr("fill", "orange");
 
-  // I added the Audi logo rings on top of the grill (still need to determine how to layer them properly)
+  // Added the Audi logo rings on top of the grill (still need to determine how to layer them properly)
   svg.append("circle")
     .attr("cx", 360)
     .attr("cy", 185)
@@ -141,9 +156,28 @@
     .attr("d", windshield(windshieldData))
     .attr("fill", "lightblue");
 
-  // Add Lines
-  // I plan on using lines to create the hood vents
-  
+  // For creating shapes, referred to https://d3-graph-gallery.com/graph/shape.html
+  // Added the lines on top of the car's hood
+  svg.append("line")
+    .attr("x1", 300)
+    .attr("y1", 145)
+    .attr("x2", 500)
+    .attr("y2", 145)
+    .attr("stroke", "black")
+
+  svg.append("line")
+    .attr("x1", 310)
+    .attr("y1", 140)
+    .attr("x2", 490)
+    .attr("y2", 140)
+    .attr("stroke", "black")
+
+  svg.append("line")
+    .attr("x1", 320)
+    .attr("y1", 135)
+    .attr("x2", 480)
+    .attr("y2", 135)
+    .attr("stroke", "black")
 
   container.append(svg.node());
 
