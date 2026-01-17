@@ -21,6 +21,7 @@
     .attr("y", 150)
     .attr("width", 300)
     .attr("height", 125)
+    .attr("stroke", "black")
     .attr("fill", "red");
 
   svg.append("rect")
@@ -29,6 +30,64 @@
     .attr("width", 280)
     .attr("height", 50)
     .attr("fill", "black");
+
+  // Added intake vents to the bumper
+  // Top half intake vents
+  svg.append("rect")
+    .attr("x", 280)
+    .attr("y", 220)
+    .attr("width", 75)
+    .attr("height", 20)
+    .attr("fill", "black");
+
+  svg.append("rect")
+    .attr("x", 365)
+    .attr("y", 220)
+    .attr("width", 75)
+    .attr("height", 20)
+    .attr("fill", "black");
+
+  svg.append("rect")
+    .attr("x", 450)
+    .attr("y", 220)
+    .attr("width", 75)
+    .attr("height", 20)
+    .attr("fill", "black");
+
+  // Bottom half intake vents
+  svg.append("rect")
+    .attr("x", 270)
+    .attr("y", 250)
+    .attr("width", 85)
+    .attr("height", 20)
+    .attr("fill", "black");
+
+  svg.append("rect")
+    .attr("x", 365)
+    .attr("y", 250)
+    .attr("width", 75)
+    .attr("height", 20)
+    .attr("fill", "black");
+
+  svg.append("rect")
+    .attr("x", 450)
+    .attr("y", 250)
+    .attr("width", 85)
+    .attr("height", 20)
+    .attr("fill", "black");  
+
+  // Added turn signal lights
+  svg.append("circle")
+    .attr("cx", 265)
+    .attr("cy", 230)
+    .attr("r", 8)
+    .attr("fill", "orange");
+
+  svg.append("circle")
+    .attr("cx", 535)
+    .attr("cy", 230)
+    .attr("r", 8)
+    .attr("fill", "orange");
 
   // I added the Audi logo rings on top of the grill (still need to determine how to layer them properly)
   svg.append("circle")
@@ -54,12 +113,14 @@
     .attr("cy", 185)
     .attr("r", 20)
     .attr("stroke", "grey");
-    
-  // Add Lines
-  // I plan on using lines to create the hood and/or windshield
 
   // Add Polygons
-  // I plan on using polygons for creating the tires of the car
+  // I plan on using polygons for creating the tires, windshield, and hood
+
+
+  // Add Lines
+  // I plan on using lines to create the hood vents
+  
 
   container.append(svg.node());
 
