@@ -114,9 +114,32 @@
     .attr("r", 20)
     .attr("stroke", "grey");
 
-  // Add Polygons
-  // I plan on using polygons for creating the tires, windshield, and hood
+  // Added the hood of the car using a trapezoid/polygon, and using path
+  // The following video gave me the idea to use area(): https://www.youtube.com/watch?v=cfuJJEdEWe8
+  // Referred to https://www.geeksforgeeks.org/javascript/d3-js-area-method/ for properly using area()
+  const hoodData = [{xVal: 250, yVal: 150}, {xVal: 300, yVal: 125}, {xVal: 500, yVal: 125}, {xVal: 550, yVal: 150}, {xVal: 250, yVal: 150}];
 
+  const hood = d3.area()
+    .x((hoodData) => hoodData.xVal)
+    .y0((hoodData) => 0)
+    .y1((hoodData) => hoodData.yVal);
+
+  svg.append("path")
+    .attr("d", hood(hoodData))
+    .attr("fill", "red");
+
+  // Added the windshield of the car (similar to windshield logic)
+  // Same references as the windshield
+  const windshieldData = [{xVal: 300, yVal: 125}, {xVal: 310, yVal: 75}, {xVal: 490, yVal: 75}, {xVal: 500, yVal: 125}, {xVal: 300, yVal: 125}];
+
+  const windshield = d3.area()
+    .x((windshieldData) => windshieldData.xVal)
+    .y0((windshieldData) => 0)
+    .y1((windshieldData) => windshieldData.yVal);
+
+  svg.append("path")
+    .attr("d", windshield(windshieldData))
+    .attr("fill", "lightblue");
 
   // Add Lines
   // I plan on using lines to create the hood vents
