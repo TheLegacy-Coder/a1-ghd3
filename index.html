@@ -13,7 +13,7 @@
     .attr("width", 800)
     .attr("height", 600);
 
-  // For creating shapes, referred to https://d3-graph-gallery.com/graph/shape.html
+  // For creating shapes and lines, referred to https://d3-graph-gallery.com/graph/shape.html
   // and https://www.youtube.com/watch?v=bp2GF8XcJdY
   // Added the bumper and grill of the car
   svg.append("rect")
@@ -37,14 +37,14 @@
     .attr("y", 165)
     .attr("width", 50)
     .attr("height", 40)
-    .attr("fill", "lightgrey")
+    .attr("fill", "lightgray");
 
   svg.append("rect")
     .attr("x", 485)
     .attr("y", 165)
     .attr("width", 50)
     .attr("height", 40)
-    .attr("fill", "lightgrey")
+    .attr("fill", "lightgray");
 
   // Added intake vents to the bumper
   // Top half intake vents
@@ -132,52 +132,85 @@
   // Added the hood of the car using a trapezoid/polygon, and using path
   // The following video gave me the idea to use area(): https://www.youtube.com/watch?v=cfuJJEdEWe8
   // Referred to https://www.geeksforgeeks.org/javascript/d3-js-area-method/ for properly using area()
-  const hoodData = [{xVal: 250, yVal: 150}, {xVal: 300, yVal: 125}, {xVal: 500, yVal: 125}, {xVal: 550, yVal: 150}, {xVal: 250, yVal: 150}];
+  const hoodPositionalData = [{xVal: 250, yVal: 150}, {xVal: 300, yVal: 125}, {xVal: 500, yVal: 125}, {xVal: 550, yVal: 150}];
 
   const hood = d3.area()
-    .x((hoodData) => hoodData.xVal)
-    .y0((hoodData) => 0)
-    .y1((hoodData) => hoodData.yVal);
+    .x((hoodPositionalData) => hoodPositionalData.xVal)
+    .y0((hoodPositionalData) => 150)
+    .y1((hoodPositionalData) => hoodPositionalData.yVal);
 
   svg.append("path")
-    .attr("d", hood(hoodData))
+    .attr("d", hood(hoodPositionalData))
+    .attr("stroke", "black")
     .attr("fill", "red");
 
-  // Added the windshield of the car (similar to windshield logic)
-  // Same references as the windshield
-  const windshieldData = [{xVal: 300, yVal: 125}, {xVal: 310, yVal: 75}, {xVal: 490, yVal: 75}, {xVal: 500, yVal: 125}, {xVal: 300, yVal: 125}];
+  // Added the mirrors of the car
+  svg.append("rect")
+    .attr("x", 490)
+    .attr("y", 110)
+    .attr("width", 40)
+    .attr("height", 15);
+
+  svg.append("rect")
+    .attr("x", 270)
+    .attr("y", 110)
+    .attr("width", 40)
+    .attr("height", 15);
+
+  // Added the windshield of the car (similar to hood logic)
+  // Same references as the hood
+  const windshieldPositionalData = [{xVal: 300, yVal: 125}, {xVal: 330, yVal: 75}, {xVal: 470, yVal: 75}, {xVal: 500, yVal: 125}];
 
   const windshield = d3.area()
-    .x((windshieldData) => windshieldData.xVal)
-    .y0((windshieldData) => 0)
-    .y1((windshieldData) => windshieldData.yVal);
+    .x((windshieldPositionalData) => windshieldPositionalData.xVal)
+    .y0((windshieldPositionalData) => 125)
+    .y1((windshieldPositionalData) => windshieldPositionalData.yVal);
 
   svg.append("path")
-    .attr("d", windshield(windshieldData))
+    .attr("d", windshield(windshieldPositionalData))
+    .attr("stroke", "red")
+    .attr("stroke-width", 3)
     .attr("fill", "lightblue");
 
-  // For creating shapes, referred to https://d3-graph-gallery.com/graph/shape.html
+  // For creating lines specifically in this case, referred to https://d3-graph-gallery.com/graph/shape.html (as mentioned previously)
   // Added the lines on top of the car's hood
   svg.append("line")
     .attr("x1", 300)
     .attr("y1", 145)
     .attr("x2", 500)
     .attr("y2", 145)
-    .attr("stroke", "black")
+    .attr("stroke", "black");
 
   svg.append("line")
     .attr("x1", 310)
     .attr("y1", 140)
     .attr("x2", 490)
     .attr("y2", 140)
-    .attr("stroke", "black")
+    .attr("stroke", "black");
 
   svg.append("line")
     .attr("x1", 320)
     .attr("y1", 135)
     .attr("x2", 480)
     .attr("y2", 135)
+    .attr("stroke", "black");
+
+  // Added the tires
+  svg.append("rect")
+    .attr("x", 250)
+    .attr("y", 275)
+    .attr("width", 60)
+    .attr("height", 20)
     .attr("stroke", "black")
+    .attr("fill", "dimgray");
+
+  svg.append("rect")
+    .attr("x", 490)
+    .attr("y", 275)
+    .attr("width", 60)
+    .attr("height", 20)
+    .attr("stroke", "black")
+    .attr("fill", "dimgray");
 
   container.append(svg.node());
 
