@@ -13,6 +13,8 @@ Resources referenced in code (**will most likely add more as development progres
 - https://www.youtube.com/watch?v=bp2GF8XcJdY
 - https://www.youtube.com/watch?v=cfuJJEdEWe8
 - https://www.geeksforgeeks.org/javascript/d3-js-area-method/
+- https://d3js.org/d3-selection/events
+- https://stackoverflow.com/questions/25123003/how-to-assign-click-event-to-every-svg-element-in-d3js
 
 GitHub Pages Link
 ---
@@ -23,9 +25,9 @@ Technical Achievements:
 ---
 - Created an array to hold positional data for the creation of polygons/trapezoids.
 - Made use of the area() method in d3 to create the aforementioned polygons/trapezoids (one for the hood and another for the windshield).
-- **As a note, I plan on adding a toggle to turn the vehicle's headlights on and off, which may require using certain methods on d3 elements.
+- The user can mouseover each headlight to change its color from gray to yellow and vice-versa, which is possible due to my implementation of a function within the "on" call that contains an if-statement that modifies the "fill" attribute of the respective element.
 
 Design Achievements:
 ---
 - Was able to make use of numerous individual elements to recreate the front end of a vehicle.
-- **As touched upon in the technical achievements section, will add headlights (essentially elements that will change color once the toggle is clicked, or could show/hide elements instead).
+- The headlights being yellow when they turn on adds to the overall retro theme that comes with the chosen vehicle (a 1980s street-legal rally car).

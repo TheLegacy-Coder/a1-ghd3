@@ -32,19 +32,35 @@
     .attr("fill", "black");
 
   // Added the headlights
+  // Referred to https://d3js.org/d3-selection/events and https://stackoverflow.com/questions/25123003/how-to-assign-click-event-to-every-svg-element-in-d3js for mouseover functionality
   svg.append("rect")
     .attr("x", 265)
     .attr("y", 165)
     .attr("width", 50)
     .attr("height", 40)
-    .attr("fill", "lightgray");
-
+    .attr("fill", "lightgray")
+    .on("mouseover", function() {
+      if (d3.select(this).attr("fill") == "lightgray") {
+        d3.select(this).attr("fill", "yellow");
+      } else {
+        d3.select(this).attr("fill", "lightgray");
+      };
+    });
+  
+  // Same references as the other headlight
   svg.append("rect")
     .attr("x", 485)
     .attr("y", 165)
     .attr("width", 50)
     .attr("height", 40)
-    .attr("fill", "lightgray");
+    .attr("fill", "lightgray")
+    .on("mouseover", function() {
+      if (d3.select(this).attr("fill") == "lightgray") {
+        d3.select(this).attr("fill", "yellow");
+      } else {
+        d3.select(this).attr("fill", "lightgray");
+      };
+    });
 
   // Added intake vents to the bumper
   // Top half intake vents
@@ -211,10 +227,6 @@
     .attr("height", 20)
     .attr("stroke", "black")
     .attr("fill", "dimgray");
-
-  // Plan on adding a remote control for the car that will toggle the headlights
-  // Will contain a single button for the headlights
-  // Once clicked, will either show/hide two boxes/rectangles that will be placed on top of the gray headlights, or could change element colors
 
   container.append(svg.node());
 
