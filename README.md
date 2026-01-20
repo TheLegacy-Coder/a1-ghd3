@@ -23,7 +23,7 @@ Resources referenced in code:
 GitHub Pages Link
 ---
 
-**Will add later
+Here is the gh-pages link: https://thelegacy-coder.github.io/a1-ghd3/
 
 Technical Achievements:
 ---
