@@ -1,7 +1,7 @@
 Assignment 1 - Hello World: GitHub and d3  
 ===
 
-For this project, my main goal was to recreate a red 1984 Audi Quattro Sport (https://supercarnostalgia.com/blog/for-sale-1984-audi-quattro-sport-usa-1) using rectangles, circles, lines, and polygons. I manually appended individual elements to an SVG, and positioned/styled them in such a way that when combined, the recreation of the car is shown.
+For this project, my main goal was to recreate a red 1984 Audi Quattro Sport (https://supercarnostalgia.com/blog/for-sale-1984-audi-quattro-sport-usa-1) using rectangles, circles, lines, and polygons/trapezoids (paths). I manually appended individual elements to an SVG, and positioned/styled them in such a way that when combined, the recreation of the car is shown. Additionally, I implemented an interactivity component for my recreation (namely the headlights turning on and off when dragging your mouse over them).
 
 This is the vehicle recreation with the headlights turned off:
 ![Headlights Off](headlights_off.png)
